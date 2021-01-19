@@ -1,0 +1,10 @@
+#include <stdio.h>
+#include <cs50.h>
+
+int main(void)
+{
+    //Uses get_string from cs50 library to get string user input
+    string name = get_string("What is your name?\n");
+    //Prints concatenation of strings "hello," and the string in the 'name' variable
+    printf("hello, %s\n", name);
+}
