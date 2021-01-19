@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <cs50.h>
+
+int main(void)
+{
+    //Get int height, repeat prompt if height is less than 1 or greater than 8.
+    //Declare the variable for height first, then assign it with user input (initializing height within the input block will not work here).
+    int h;
+    do
+    {
+        h = get_int("Height: ");
+    }
+    while (h < 1 || h > 8);
+        
+    //Use a for loop to iterate pyramid height.
+    //A nested block of for loops to print the necessary amount of whitespace and hashes for each iteration.
+    for (int i = 0; i < h; i++)
+    {
+        for (int ws = 1; ws < h - i; ws++)
+        {
+            printf(" ");
+        }
+        for (int hs = 0; hs <= i; hs++)
+        {
+            printf("#");
+        }
+        printf("\n");
+    }
+}
