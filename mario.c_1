@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <cs50.h>
+
+int main(void)
+{
+    //Get int height
+    int height = get_int("Height: ");
+    //Print height. When using a format specifier (%), make sure to include not just the data type (%i) but also the value (the int stored in 'height')
+    printf("Stored: %i\n", height);
+    
+    //Print necessary strings with a for loop.
+    //Initialization (of variable for counting); condition (for looping); update expression
+    //For iteration i, when i is less than height, increment i.
+    
+    //Repeats whatever is inside the code block i (4) times on one line.
+    //\n == height, white space == 8 - height (int w = 0, w < 8 - height; w++)
+    //height - i == white space
+    //Print hashes (==height), then white space (==height-i), then \n
+    //Print hashes (==iteration)
+    
+    //Counts to the value of height. Prints hashes (ultimately equivalent to height).
+    //Counts to the value of height. Essentially the amount of repetitions (pyramid height, with the help of \n).
+    //for (int i = 0; i < height; i++)
+    //{
+        //For each iteration. Each line in the pyramid. Count to white space.
+        //(int ws = height - i; i < ws, ws++) was wrong, step by step understanding what you're trying to do instead of artbitrarily throwing down blocks of code
+        //Changed hs = i to hs <=1. Changed ws = 0 to ws = 1.
+    //    for (int hs = 0; hs <= i; hs++)
+    //    {
+    //        printf("#");
+    //    }
+    //    for (int ws = 1; ws < height - i; ws++)
+    //    {
+    //    printf(".");
+    //    }
+    //    printf("\n");
+    //}
+//}
+
+//ws == height - i, hashes == i
+//The main for block is a count for height. The nested blocks are the spaces and hashes in an iteration.
+//If height is 4 for example, the main for loop is executed, then each nested block in its entirety going straight down before going back to the top.
+
+    for (int i = 0; i < height; i++)
+    {
+        for (int ws = 1; ws < height - i; ws++)
+        {
+            printf(" ");
+        }
+        for (int hs = 0; hs <= i; hs++)
+        {
+            printf("#");
+        }
+        printf("\n");
+    }
+}
